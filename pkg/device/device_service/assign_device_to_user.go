@@ -1,17 +1,17 @@
-package user_service
+package device_service
 
 import (
 	"data_monitor/common"
 	"data_monitor/dao"
-	"data_monitor/pkg/user/user_dao"
-	"data_monitor/pkg/user/user_model"
+	"data_monitor/pkg/device/device_dao"
+	"data_monitor/pkg/device/device_model"
 )
 
-func UpdateUser(m *user_model.User) (innerErrCode common.InnerErrCode,errMsg string) {
+func AssignDevice2User(m *device_model.DeviceUser) (innerErrCode common.InnerErrCode, errMsg string) {
 	tx := dao.GetDB().Begin()
 	defer tx.Rollback()
 
-	if err := user_dao.UpdateUser(tx, m); err !=nil{
+	if err := device_dao.AssignDevice2User(tx, m); err != nil{
 		return common.INNER_ERR_CODE_UNKNOWN_ERR, err.Error()
 	}
 

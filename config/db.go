@@ -15,19 +15,15 @@ const (
 
 )
 
-var db *gorm.DB
+var DB *gorm.DB
 
 func InitDB() {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", DB_USERNAME, DB_PWD, DB_HOSTNAME, DB_PORT, DB_DATABASE_NAME)
 
 	var err error
-	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-}
-
-func GetDB() *gorm.DB{
-	return db
 }

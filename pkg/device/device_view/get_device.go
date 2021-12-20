@@ -1,30 +1,30 @@
-package user_view
+package device_view
 
 import (
 	"data_monitor/pkg/app"
-	"data_monitor/pkg/user/user_service"
+	"data_monitor/pkg/device/device_service"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
 )
 
-func GetUser(c *gin.Context) {
+func GetDevice(c *gin.Context) {
 	appG := app.Gin{C: c}
 	id, _ := strconv.Atoi(c.Param("id"))
 
 
-	user, err := user_service.GetUserById(id)
+	device, err := device_service.GetDevice(id)
 	if err != nil{
 		appG.Response(http.StatusNotFound, app.ERROR, nil)
 		return
 	}
 
-	if user.Name == ""{
+	if device.Name == ""{
 		appG.Response(http.StatusNotFound, app.ERROR, nil)
 		return
 	}
 
 	appG.Response(http.StatusOK, app.SUCCESS, map[string]interface{}{
-		"user": user,
+		"device": device,
 	})
 }

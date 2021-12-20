@@ -1,5 +1,11 @@
 package user_service
 
-func GetUser(id int) {
+import (
+	"data_monitor/dao"
+	"data_monitor/pkg/user/user_dao"
+	"data_monitor/pkg/user/user_model"
+)
 
+func GetUserById(id int) (user *user_model.User, err error) {
+	return user_dao.GetUserById(dao.GetDB(), id)
 }
