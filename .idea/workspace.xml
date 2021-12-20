@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df3260f4-32d8-4c65-bff0-3f52255a9823" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_dao/create_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_dao/delete_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_dao/get_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_dao/update_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_model/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_service/create_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_service/delete_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_service/get_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_service/update_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/user/user_view/get_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/views.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
