@@ -4,7 +4,7 @@ type Device struct {
 	Id 			int64
 	Name 		string
 	Owners 		string
-	AreaId		int64
+	AreaId		string
 }
 
 type DeviceUser struct {
