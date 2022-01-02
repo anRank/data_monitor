@@ -1,19 +1,19 @@
-package user_view
+package device_view
 
 import (
 	"data_monitor/common"
 	"data_monitor/pkg/app"
-	"data_monitor/pkg/user/user_service"
+	"data_monitor/pkg/device/device_service"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
 )
 
-func DeleteUser(c *gin.Context) {
+func DeleteDevice(c *gin.Context) {
 	appG := app.Gin{C: c}
 	id, _ := strconv.Atoi(c.Param("id"))
 
-	innerErrCode, errMsg := user_service.DeleteUser(int64(id))
+	innerErrCode, errMsg := device_service.DeleteDevice(int64(id))
 	switch innerErrCode {
 	case common.INNER_ERR_CODE_UNKNOWN_ERR:
 		appG.Response(http.StatusNotFound, app.ERROR, errMsg)

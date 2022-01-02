@@ -5,6 +5,7 @@ type Device struct {
 	Name 		string
 	Owners 		string
 	AreaId		string
+	IsDeleted   int
 }
 
 type DeviceUser struct {
@@ -13,6 +14,7 @@ type DeviceUser struct {
 	Username 	string
 	DeviceId 	int64
 	DeviceName  string
+	IsDeleted   int
 }
 
 func (Device)TableName() string{

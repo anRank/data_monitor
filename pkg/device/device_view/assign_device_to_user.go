@@ -17,6 +17,10 @@ func AssignDeviceToUser(c *gin.Context) {
 		appG.Response(http.StatusBadRequest, app.ERROR, nil)
 		return
 	}
+	if err := request.CheckParams(); err != nil {
+		appG.Response(http.StatusBadRequest, app.ERROR, err.Error())
+		return
+	}
 
 	m := &device_model.DeviceUser{}
 
@@ -39,5 +43,18 @@ func DeleteDeviceToUser(c *gin.Context)  {
 	if err := c.BindJSON(request); err!=nil{
 		appG.Response(http.StatusBadRequest, app.ERROR, nil)
 		return
+	}
+
+	m := &device_model.DeviceUser{}
+
+	request.CopyToModel(m)
+	innerErrCode, errMsg := device_service.DeleteDevice2User(m)
+	switch innerErrCode {
+	case common.INNER_ERR_CODE_UNKNOWN_ERR:
+		appG.Response(http.StatusNotFound, app.ERROR, errMsg)
+	case common.INNER_ERR_CODE_SUCCESS:
+		appG.Response(http.StatusOK, app.SUCCESS, "create device success")
+	default:
+		appG.Response(http.StatusBadRequest, app.ERROR, errMsg)
 	}
 }

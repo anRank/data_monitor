@@ -6,6 +6,6 @@ import (
 	"data_monitor/pkg/user/user_model"
 )
 
-func GetUserById(id int) (user *user_model.User, err error) {
+func GetUserById(id int64) (user *user_model.User, err error) {
 	return user_dao.GetUserById(dao.GetDB(), id)
 }

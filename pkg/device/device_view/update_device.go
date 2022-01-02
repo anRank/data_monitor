@@ -11,7 +11,7 @@ import (
 
 func UpdateDevice(c *gin.Context) {
 	appG := app.Gin{C: c}
-	request := UpdateDataRequest{}
+	request := &UpdateDeviceRequest{}
 
 	if err := c.BindJSON(request); err != nil{
 		appG.Response(http.StatusBadRequest, app.ERROR, nil)
@@ -30,7 +30,7 @@ func UpdateDevice(c *gin.Context) {
 	case common.INNER_ERR_CODE_UNKNOWN_ERR:
 		appG.Response(http.StatusNotFound, app.ERROR, errMsg)
 	case common.INNER_ERR_CODE_SUCCESS:
-		appG.Response(http.StatusOK, app.SUCCESS, "update user success")
+		appG.Response(http.StatusOK, app.SUCCESS, "update device success")
 	default:
 		appG.Response(http.StatusBadRequest, app.ERROR, errMsg)
 	}

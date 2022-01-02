@@ -2,21 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2500c992-b39d-4509-a1b7-0b4557cd2cb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/data/data_dao/get_data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/data/data_model/data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/data/data_service/get_data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/data/data_view/get_data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/device/device_dao/update_device.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/device/device_service/update_device.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/device/device_dao/delete_device.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/device/device_service/delete_device.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/device/device_view/delete_device.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/data/data_dao/get_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/data/data_dao/get_data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/data/data_service/get_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/data/data_service/get_data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/data/data_view/get_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/data/data_view/get_data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_dao/assign_device_to_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_dao/device_to_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_dao/get_device.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_dao/get_device.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/device/device_model/device.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_model/device.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_service/assign_device_to_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_service/assign_device_to_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_service/get_device.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_service/get_device.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_view/assign_device_to_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_view/assign_device_to_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_view/get_device.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_view/get_device.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/device/device_view/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_view/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/user/user_view/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_view/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/device/device_view/update_device.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/device/device_view/update_device.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_dao/delete_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_dao/delete_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_dao/get_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_dao/get_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_service/delete_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_service/delete_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_service/get_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_service/get_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_view/delete_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_view/delete_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/user/user_view/get_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/user/user_view/get_user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/views.go" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,5 +98,16 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/pkg/device/device_view/types.go</url>
+          <line>82</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -13,7 +13,7 @@ func GetDevice(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 
 
-	device, err := device_service.GetDevice(id)
+	device, err := device_service.GetDevice(int64(id))
 	if err != nil{
 		appG.Response(http.StatusNotFound, app.ERROR, nil)
 		return

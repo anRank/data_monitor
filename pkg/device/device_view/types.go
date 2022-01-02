@@ -2,6 +2,7 @@ package device_view
 
 import (
 	"data_monitor/pkg/device/device_model"
+	"data_monitor/pkg/device/device_service"
 	"fmt"
 	"strings"
 )
@@ -11,13 +12,6 @@ type CreateDeviceRequest struct {
 	AreaId   *string
 	AreaName *string
 	Owners   *string
-}
-
-type Device2UserRequest struct {
-	UserId     *int64
-	UserName   *string
-	DeviceId   *int64
-	DeviceName *string
 }
 
 func (r CreateDeviceRequest) CopyToModel(m *device_model.Device) {
@@ -44,6 +38,13 @@ func (r CreateDeviceRequest) CheckParams() error {
 	return nil
 }
 
+type Device2UserRequest struct {
+	UserId     *int64  `json:"user_id"`
+	UserName   *string `json:"user_name"`
+	DeviceId   *int64  `json:"device_id"`
+	DeviceName *string `json:"device_name"`
+}
+
 func (r Device2UserRequest) CopyToModel(m *device_model.DeviceUser) {
 	if r.UserId != nil {
 		m.UserId = *r.UserId
@@ -61,11 +62,19 @@ func (r Device2UserRequest) CopyToModel(m *device_model.DeviceUser) {
 
 func (r Device2UserRequest) CheckParams() error {
 	var errMsgs []string
-	if r.UserName == nil {
-		errMsgs = append(errMsgs, fmt.Sprint("device name cannot be empty string"))
+	if r.DeviceId == nil {
+		errMsgs = append(errMsgs, fmt.Sprint("device id cannot be nil"))
 	}
-	if r.DeviceName == nil {
-		errMsgs = append(errMsgs, fmt.Sprint("device name cannot be empty string"))
+	if r.UserId == nil {
+		errMsgs = append(errMsgs, fmt.Sprint("device id cannot be nil"))
+	}
+
+	e, err := device_service.IsRelationExisted(*r.UserId, *r.DeviceId)
+	if err != nil {
+		errMsgs = append(errMsgs, err.Error())
+	}
+	if e{
+		errMsgs = append(errMsgs, fmt.Sprint("relation already existed"))
 	}
 
 	if len(errMsgs) > 0 {
@@ -74,22 +83,20 @@ func (r Device2UserRequest) CheckParams() error {
 	return nil
 }
 
-
-type UpdateDataRequest struct {
-	Id *int64
-	Name *string
-	AreaId *string
-	Owners *string
+type UpdateDeviceRequest struct {
+	Id     *int64  `json:"id"`
+	Name   *string `json:"name"`
+	AreaId *string `json:"area_id"`
 }
 
-func (r UpdateDataRequest) CheckParams() error {
+func (r UpdateDeviceRequest) CheckParams() error {
 	if r.Id == nil {
 		return fmt.Errorf("device id cannot be nil")
 	}
 	return nil
 }
 
-func (r UpdateDataRequest) CopyToModel(m *device_model.Device) {
+func (r UpdateDeviceRequest) CopyToModel(m *device_model.Device) {
 	if r.Id != nil {
 		m.Id = *r.Id
 	}
@@ -98,8 +105,5 @@ func (r UpdateDataRequest) CopyToModel(m *device_model.Device) {
 	}
 	if r.AreaId != nil {
 		m.AreaId = *r.AreaId
-	}
-	if r.Owners != nil {
-		m.Owners = *r.Owners
 	}
 }

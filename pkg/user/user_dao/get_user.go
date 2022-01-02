@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func GetUserById(db *gorm.DB, id int) (user *user_model.User, err error) {
+func GetUserById(db *gorm.DB, id int64) (user *user_model.User, err error) {
 	query := db.Model(&user_model.User{})
 
 	err = query.Where("id = ?", id).Find(&user).Error

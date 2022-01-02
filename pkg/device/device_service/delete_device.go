@@ -1,16 +1,16 @@
-package user_service
+package device_service
 
 import (
 	"data_monitor/common"
 	"data_monitor/dao"
-	"data_monitor/pkg/user/user_dao"
+	"data_monitor/pkg/device/device_dao"
 )
 
-func DeleteUser(id int64) (innerErrCode common.InnerErrCode,errMsg string)  {
+func DeleteDevice(id int64)(innerErrCode common.InnerErrCode,errMsg string) {
 	tx := dao.GetDB().Begin()
 	defer tx.Rollback()
 
-	if err := user_dao.DeleteUser(tx, id); err !=nil{
+	if err := device_dao.DeleteDevice(tx, id); err !=nil{
 		return common.INNER_ERR_CODE_UNKNOWN_ERR, err.Error()
 	}
 

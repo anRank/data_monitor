@@ -1,9 +1,9 @@
-package user_dao
+package device_dao
 
 import "gorm.io/gorm"
 
-func DeleteUser(db *gorm.DB, id int64) error {
-	m, err := GetUserById(db, id)
+func DeleteDevice(db *gorm.DB, id int64) error {
+	m, err := GetDevice(db, id)
 	if err != nil{
 		return err
 	}

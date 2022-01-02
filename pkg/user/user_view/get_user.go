@@ -13,7 +13,7 @@ func GetUser(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 
 
-	user, err := user_service.GetUserById(id)
+	user, err := user_service.GetUserById(int64(id))
 	if err != nil{
 		appG.Response(http.StatusNotFound, app.ERROR, nil)
 		return

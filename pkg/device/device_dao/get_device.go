@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func GetDevice(db *gorm.DB, id int) (device *device_model.Device, err error) {
+func GetDevice(db *gorm.DB, id int64) (device *device_model.Device, err error) {
 	query := db.Model(&device_model.Device{})
 
 	err = query.Where("id = ?", id).Find(&device).Error
